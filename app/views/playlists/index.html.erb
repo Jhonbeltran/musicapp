@@ -1,0 +1,37 @@
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Playlists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+	  <th>Number of votes</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playlists.each do |playlist| %>
+      <tr>
+        <td><%= playlist.name %></td>
+        <td><%= playlist.number_of_votes %></td>
+        <td><%= link_to 'Show', playlist %></td>
+        <td><%= link_to 'Edit', edit_track_path(playlist) %></td>
+        <td><%= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Playlist', new_playlist_path %>|
+<%= link_to 'New Track', new_track_path %>
+
+
+
